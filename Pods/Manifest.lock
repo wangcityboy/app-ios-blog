@@ -1,0 +1,32 @@
+PODS:
+  - Alamofire (4.0.0)
+  - DGElasticPullToRefresh (1.1)
+  - Kingfisher (3.1.0)
+  - RDVTabBarController (1.1.9)
+  - SCLAlertView (0.6.0)
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
+  - SDWebImage/Core (3.8.2)
+  - SwiftyJSON (3.0.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.0)
+  - DGElasticPullToRefresh (~> 1.1)
+  - Kingfisher (~> 3.0)
+  - RDVTabBarController
+  - SCLAlertView
+  - SDWebImage
+  - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: fef59f00388f267e52d9b432aa5d93dc97190f14
+  DGElasticPullToRefresh: 28f11a6026302a90f8ffebbc6e24748e584dddd3
+  Kingfisher: 7779f22e977393e9533a89a9685beb8f679d3767
+  RDVTabBarController: 67794f7a7a37f8e32f046f85ac67d06ab92d624a
+  SCLAlertView: 0f6b3c23a48b4993564ff1dd3c065782e4b2b687
+  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
+  SwiftyJSON: f57b2b44bc166617372d1c70773591fe9f0f5fd4
+
+PODFILE CHECKSUM: 3f2b2d7ba5955efd1a6b05936a5c1dce181e967c
+
+COCOAPODS: 1.1.0.beta.1
