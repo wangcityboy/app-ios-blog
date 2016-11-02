@@ -14,9 +14,10 @@
     起来比较简单的P图软件-Sketch。<br>
 
 ### 运行环境要求： 
--开发工具：xcode 7.0 <br>
+-开发工具：xcode 8.0 <br>
+-手机平台：iOS 8.0 以上<br>
 -开发平台：Mac os<br>
--应用接口：请参见 http://wanghaifeng.net/api/index.php，
+-应用接口：请参见 http://wanghaifeng.net/api/index.php，  https://github.com/wangcityboy/api-blog-php
 
 
 ### 更新日志：<br/>
