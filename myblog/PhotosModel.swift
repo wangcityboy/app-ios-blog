@@ -20,6 +20,7 @@ class PhotosModel: NSObject {
         model.dId = data["tg_id"] as?String
         model.dName = data["tg_name"] as?String
         model.dFace = data["tg_face"] as?String
+        model.dDate = data["tg_date"] as?String
         model.dImages = data["tg_images"] as?NSArray
         return model;
         

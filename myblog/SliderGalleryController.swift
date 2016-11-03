@@ -117,6 +117,7 @@ class SliderGalleryController: UIViewController,UIScrollViewDelegate{
         self.pageControl = UIPageControl(frame: CGRect(x: kScreenWidth/2-60,y: self.scrollerViewHeight! - 20, width: 120, height: 20))
         self.pageControl?.numberOfPages = (self.dataSource?.count)!
         self.pageControl?.isUserInteractionEnabled = false
+        self.pageControl?.pageIndicatorTintColor = UIColor.black
         self.view.addSubview(self.pageControl!)
     }
     
@@ -138,22 +139,23 @@ class SliderGalleryController: UIViewController,UIScrollViewDelegate{
     func resetImageViewSource() {
         //当前显示的是第一张图片
         if self.currentIndex == 0 {
-            self.leftImageView?.imageFromURL(self.dataSource!.last!,placeholder: placeholderImage)
-            self.middleImageView?.imageFromURL(self.dataSource!.first!,placeholder: placeholderImage)
+            self.leftImageView?.sd_setImage(with: URL(string: server_url + self.dataSource!.last!), placeholderImage: placeholderImage)
+            self.middleImageView?.sd_setImage(with:URL(string:server_url + self.dataSource!.first!),placeholderImage: placeholderImage)
             let rightImageIndex = (self.dataSource?.count)!>1 ? 1 : 0 //保护
-            self.rightImageView?.imageFromURL(self.dataSource![rightImageIndex],placeholder: placeholderImage)
+            self.rightImageView?.sd_setImage(with:URL(string:server_url + self.dataSource![rightImageIndex]),placeholderImage: placeholderImage)
         }
         //当前显示的是最好一张图片
         else if self.currentIndex == (self.dataSource?.count)! - 1 {
-            self.leftImageView?.imageFromURL(self.dataSource![self.currentIndex-1],placeholder: placeholderImage)
-            self.middleImageView?.imageFromURL(self.dataSource!.last!,placeholder: placeholderImage)
-            self.rightImageView?.imageFromURL(self.dataSource!.first!,placeholder: placeholderImage)
+            self.leftImageView?.sd_setImage(with: URL(string: server_url + self.dataSource![self.currentIndex-1]), placeholderImage: placeholderImage)
+            self.middleImageView?.sd_setImage(with:URL(string:server_url + self.dataSource!.last!),placeholderImage: placeholderImage)
+            self.rightImageView?.sd_setImage(with:URL(string:server_url + self.dataSource!.first!),placeholderImage: placeholderImage)
         }
         //其他情况
         else{
-            self.leftImageView?.imageFromURL(self.dataSource![self.currentIndex-1],placeholder: placeholderImage)
-            self.middleImageView?.imageFromURL(self.dataSource![self.currentIndex],placeholder: placeholderImage)
-            self.rightImageView?.imageFromURL(self.dataSource![self.currentIndex+1],placeholder: placeholderImage)
+            self.leftImageView?.sd_setImage(with: URL(string: server_url + self.dataSource![self.currentIndex-1]), placeholderImage: placeholderImage)
+            self.middleImageView?.sd_setImage(with:URL(string:server_url + self.dataSource![self.currentIndex]),placeholderImage: placeholderImage)
+            self.rightImageView?.sd_setImage(with:URL(string:server_url + self.dataSource![self.currentIndex+1]),placeholderImage: placeholderImage)
+            
         }
     }
     

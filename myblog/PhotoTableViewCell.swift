@@ -1,71 +1,90 @@
 //
-//  PhotoTableViewCell.swift
-//  myblog
+//  giftTableViewCell.swift
+//  dantang
 //
-//  Created by chinaskin on 16/10/29.
-//  Copyright © 2016年 wanghaifeng. All rights reserved.
+//  Created by HYZ on 16/10/19.
+//  Copyright © 2016年 HYZ. All rights reserved.
 //
 
 import UIKit
+import Kingfisher
 
-class PhotoTableViewCell:UIView{
-    let wb = (UIScreen.main.bounds.width) / 750
-    let logo = UIImageView()
-    let name = UILabel()
-    let price = UILabel()
-    let islikd = UIButton()
-    let islikednum = UILabel()
+
+protocol photoCellPushtoDetailDelegate :NSObjectProtocol {
+    func photoCellPushtoDetail(isleft:Bool, tag:Int)
+}
+
+class PhotoTableViewCell: UITableViewCell {
+    let wb = mainScreenWidth / 750
+    let liftView = PhotoViewCell()
+    let rightView = PhotoViewCell()
+    weak var delegate : photoCellPushtoDetailDelegate?
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        self.makeUI()
-        self.backgroundColor = UIColor.white
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        
+        super.init(style: UITableViewCellStyle.default, reuseIdentifier: String?.none)
+        self.makeCellUI()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
+    
+    func  makeCellUI(){
+       
+        liftView.frame = CGRect.init(x: 10*wb, y: 10*wb, width: 355*wb, height: 340*wb)
+        self.addSubview(liftView)
+        
+        let  gesturnL :UITapGestureRecognizer = UITapGestureRecognizer.init(target: self, action:#selector(PhotoTableViewCell.liftPush))
+        liftView.addGestureRecognizer(gesturnL)
+        
+        
+        
+        rightView.frame = CGRect.init(x: 385*wb, y: 10*wb, width: 355*wb, height: 340*wb)
+        self.addSubview(rightView)
+        
+        let  gesturnR :UITapGestureRecognizer = UITapGestureRecognizer.init(target: self, action:  #selector(rightPush))
+        rightView.addGestureRecognizer(gesturnR)
+        
+        
+        self.backgroundColor = UIColor.gray
+        
+        
+    }
+    func liftPush(){
+        delegate?.photoCellPushtoDetail(isleft: true, tag: self.tag)
+        
+    }
+    
+    func rightPush(){
+        delegate?.photoCellPushtoDetail(isleft: false, tag: self.tag)
+    }
+    
+    func setliftView(model:PhotosModel){
+        let url = URL(string: server_url + model.dFace!)
+        self.liftView.logo.kf.setImage(with: url)
+        self.liftView.name.text = model.dName! + "-[" + String(describing: (model.dImages?.count)!) + "]"
+        self.liftView.date.text = model.dDate
+    }
+    
+    func setrightView(model:PhotosModel){
+        let url = URL(string: server_url +  model.dFace!)
+        self.rightView.logo.kf.setImage(with: url)
+        self.rightView.name.text = model.dName! + "-[" + String(describing: (model.dImages?.count)!) + "]"
+        self.rightView.date.text = model.dDate
+    }
     
     
-    
-    func  makeUI()  {
-        
-        self.layer.masksToBounds = true
-        self.layer.cornerRadius = 5
-        
-        //325* 360
-        
-        logo.frame = CGRect.init(x: 0, y: 0, width: 355*wb, height: 360*wb)
-        self.addSubview(logo)
-        
-        name.frame = CGRect.init(x: 0, y: 370*wb, width: 325*wb, height: 80*wb)
-        name.textColor = UIColor.black
-        name.textAlignment = NSTextAlignment.left
-        name.numberOfLines = 2;
-        name.lineBreakMode = .byTruncatingTail
-        name.font = UIFont.italicSystemFont(ofSize: 14)
-        self.addSubview(name)
-        
-        price.frame = CGRect.init(x: 10*wb, y: 460*wb, width: 210*wb, height: 40*wb)
-        price.textColor = UIColor.init(red: 215/255, green: 94/255, blue: 99/255, alpha: 1)
-        price.textAlignment = .left
-        price.font = UIFont.italicSystemFont(ofSize: 12)
-        self.addSubview(price)
-        
-        islikd.frame = CGRect.init(x: 230*wb, y: 460*wb, width: 32*wb, height: 32*wb)
-        islikd.setImage(UIImage.init(named: "content-details_like_16x16_"), for: .normal)
-        islikd.setImage(UIImage.init(named: "content-details_like_selected_16x16_"), for: .selected)
-        self.addSubview(islikd)
-        
-        
-        islikednum.frame = CGRect.init(x:265*wb, y: 456*wb, width: 90*wb, height: 40*wb)
-        islikednum.textAlignment = .center
-        islikednum.textColor = UIColor.black
-        islikednum.font = UIFont.italicSystemFont(ofSize: 12)
-        self.addSubview(islikednum)
-        
-        
-        
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+
+        // Configure the view for the selected state
     }
 
 }

@@ -193,7 +193,7 @@ class HomeViewController: UIViewController,SliderGalleryControllerDelegate {
                         advertiseItem.dImage = subJson["tg_image"].string!
                         advertiseItem.dContent = subJson["tg_content"].string!
                         advertiseItem.dUrl = subJson["tg_url"].string!
-                        self.images.append(server_url + (advertiseItem.dImage as String))
+                        self.images.append(advertiseItem.dImage as String)
                     }
                     //异步处理，并返回主线程
                     DispatchQueue.main.async {() -> Void in

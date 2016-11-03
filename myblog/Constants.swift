@@ -6,6 +6,7 @@
 //
 
 import Foundation
+//请求地址
 let server_url =       "http://wanghaifeng.net"
 let advertise_url =    "http://wanghaifeng.net/api/ios/advertise.php"
 

@@ -62,13 +62,13 @@
 		AF7F1E551DBA0F9400CB4FF4 /* UIColor+Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7F1E541DBA0F9400CB4FF4 /* UIColor+Application.swift */; };
 		AF7F1E571DBA0FCC00CB4FF4 /* AvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7F1E561DBA0FCC00CB4FF4 /* AvatarImageView.swift */; };
 		AF7F1E591DBA1BA600CB4FF4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF7F1E581DBA1BA500CB4FF4 /* CoreGraphics.framework */; };
-		AFB571131DC447000022EF01 /* PhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB571121DC447000022EF01 /* PhotoTableViewCell.swift */; };
 		AFB571151DC4476D0022EF01 /* PhotosModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB571141DC4476D0022EF01 /* PhotosModel.swift */; };
 		AFB571171DC44B150022EF01 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB571161DC44B150022EF01 /* ImageViewController.swift */; };
 		AFB571191DC44BD20022EF01 /* DGElasticPullToRefresh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFB571181DC44BD20022EF01 /* DGElasticPullToRefresh.framework */; };
-		AFB5711B1DC49D360022EF01 /* PhotoDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB5711A1DC49D360022EF01 /* PhotoDetailCell.swift */; };
-		AFB5711D1DC49DC90022EF01 /* giftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB5711C1DC49DC90022EF01 /* giftModel.swift */; };
+		AFB5711B1DC49D360022EF01 /* PhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB5711A1DC49D360022EF01 /* PhotoTableViewCell.swift */; };
 		AFB5711F1DC4A14A0022EF01 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFB5711E1DC4A14A0022EF01 /* Kingfisher.framework */; };
+		AFE952E81DCB059800BE0297 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE952E71DCB059800BE0297 /* PhotoDetailViewController.swift */; };
+		AFE952EA1DCB11B800BE0297 /* PhotoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE952E91DCB11B800BE0297 /* PhotoViewCell.swift */; };
 		AFF1ED061DBDA3F70044EB86 /* DismissViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF1ED051DBDA3F70044EB86 /* DismissViewController.swift */; };
 		AFF1ED081DBDA5D20044EB86 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF1ED071DBDA5D20044EB86 /* RegisterViewController.swift */; };
 		AFF1ED0A1DBDA6120044EB86 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF1ED091DBDA6120044EB86 /* ResetPasswordViewController.swift */; };
@@ -184,13 +184,13 @@
 		AF7F1E541DBA0F9400CB4FF4 /* UIColor+Application.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Application.swift"; sourceTree = "<group>"; };
 		AF7F1E561DBA0FCC00CB4FF4 /* AvatarImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarImageView.swift; sourceTree = "<group>"; };
 		AF7F1E581DBA1BA500CB4FF4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		AFB571121DC447000022EF01 /* PhotoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCell.swift; sourceTree = "<group>"; };
 		AFB571141DC4476D0022EF01 /* PhotosModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosModel.swift; sourceTree = "<group>"; };
 		AFB571161DC44B150022EF01 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		AFB571181DC44BD20022EF01 /* DGElasticPullToRefresh.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DGElasticPullToRefresh.framework; path = "../../Library/Developer/Xcode/DerivedData/myblog-benvpflpiwefjhaggesyfszeovbw/Build/Products/Debug-iphoneos/DGElasticPullToRefresh/DGElasticPullToRefresh.framework"; sourceTree = "<group>"; };
-		AFB5711A1DC49D360022EF01 /* PhotoDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoDetailCell.swift; sourceTree = "<group>"; };
-		AFB5711C1DC49DC90022EF01 /* giftModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = giftModel.swift; sourceTree = "<group>"; };
+		AFB5711A1DC49D360022EF01 /* PhotoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCell.swift; sourceTree = "<group>"; };
 		AFB5711E1DC4A14A0022EF01 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = "../../Library/Developer/Xcode/DerivedData/myblog-benvpflpiwefjhaggesyfszeovbw/Build/Products/Debug-iphoneos/Kingfisher/Kingfisher.framework"; sourceTree = "<group>"; };
+		AFE952E71DCB059800BE0297 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
+		AFE952E91DCB11B800BE0297 /* PhotoViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewCell.swift; sourceTree = "<group>"; };
 		AFF1ED051DBDA3F70044EB86 /* DismissViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DismissViewController.swift; sourceTree = "<group>"; };
 		AFF1ED071DBDA5D20044EB86 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		AFF1ED091DBDA6120044EB86 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
@@ -332,11 +332,11 @@
 			children = (
 				AF49A5EB1DB619BD0023A2FF /* PhotoViewController.swift */,
 				AF7F1E361DB9FC5000CB4FF4 /* PhotoDirList.swift */,
-				AFB571121DC447000022EF01 /* PhotoTableViewCell.swift */,
 				AFB571141DC4476D0022EF01 /* PhotosModel.swift */,
 				AFB571161DC44B150022EF01 /* ImageViewController.swift */,
-				AFB5711C1DC49DC90022EF01 /* giftModel.swift */,
-				AFB5711A1DC49D360022EF01 /* PhotoDetailCell.swift */,
+				AFB5711A1DC49D360022EF01 /* PhotoTableViewCell.swift */,
+				AFE952E71DCB059800BE0297 /* PhotoDetailViewController.swift */,
+				AFE952E91DCB11B800BE0297 /* PhotoViewCell.swift */,
 			);
 			name = photo;
 			sourceTree = "<group>";
@@ -708,6 +708,7 @@
 				AF7F1E551DBA0F9400CB4FF4 /* UIColor+Application.swift in Sources */,
 				AFF1ED231DBF33E00044EB86 /* StarView.swift in Sources */,
 				AF49A61B1DB61CE20023A2FF /* MJRefreshLegendFooter.m in Sources */,
+				AFE952EA1DCB11B800BE0297 /* PhotoViewCell.swift in Sources */,
 				AFF1ED141DBE06320044EB86 /* MyBlogViewController.swift in Sources */,
 				AF49A61D1DB61CE20023A2FF /* UIScrollView+MJExtension.m in Sources */,
 				AF49A6171DB61CE20023A2FF /* MJRefreshFooter.m in Sources */,
@@ -722,7 +723,6 @@
 				AF49A6311DB870660023A2FF /* ArticleLists.swift in Sources */,
 				AF49A62D1DB621A20023A2FF /* StringUtils.swift in Sources */,
 				AF7F1E2B1DB9C10200CB4FF4 /* BaseViewController.swift in Sources */,
-				AFB571131DC447000022EF01 /* PhotoTableViewCell.swift in Sources */,
 				AF49A6151DB61CE20023A2FF /* MJRefreshComponent.m in Sources */,
 				AF49A5B21DB613300023A2FF /* AppDelegate.swift in Sources */,
 				AFB571151DC4476D0022EF01 /* PhotosModel.swift in Sources */,
@@ -730,14 +730,14 @@
 				AFF1ED121DBE06040044EB86 /* WeixinViewController.swift in Sources */,
 				AF49A62F1DB621C70023A2FF /* HomeDetailViewController.swift in Sources */,
 				AFF1ED161DBEF1900044EB86 /* SliderGalleryController.swift in Sources */,
-				AFB5711B1DC49D360022EF01 /* PhotoDetailCell.swift in Sources */,
+				AFB5711B1DC49D360022EF01 /* PhotoTableViewCell.swift in Sources */,
 				AFF1ED081DBDA5D20044EB86 /* RegisterViewController.swift in Sources */,
+				AFE952E81DCB059800BE0297 /* PhotoDetailViewController.swift in Sources */,
 				AF7F1E2F1DB9C40B00CB4FF4 /* ArticleDetailViewController.swift in Sources */,
 				AF7F1E571DBA0FCC00CB4FF4 /* AvatarImageView.swift in Sources */,
 				AF7F1E291DB8CA3A00CB4FF4 /* UIViewController+HUD.swift in Sources */,
 				AFF1ED0A1DBDA6120044EB86 /* ResetPasswordViewController.swift in Sources */,
 				AF49A6261DB61F690023A2FF /* Macro.swift in Sources */,
-				AFB5711D1DC49DC90022EF01 /* giftModel.swift in Sources */,
 				AF49A61E1DB61CE20023A2FF /* UIScrollView+MJRefresh.m in Sources */,
 				AFF1ED1F1DBF13AF0044EB86 /* TitleRImageMoreCell.swift in Sources */,
 				AF7F1E371DB9FC5100CB4FF4 /* PhotoDirList.swift in Sources */,

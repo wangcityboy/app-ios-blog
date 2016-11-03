@@ -31,14 +31,11 @@ class HomeDetailViewController:UIViewController{
         super.viewWillAppear(animated)
         self.rdv_tabBarController.setTabBarHidden(true, animated: true)
         self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(image: UIImage(named: "navigationbar_back"), style: .plain, target: self, action: #selector(trashClick))
-        
-        
     }
     
     //点击返回上一层
     func trashClick(){
         self.navigationController!.popToRootViewController(animated: true)
-        
     }
     
     
