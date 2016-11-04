@@ -66,7 +66,7 @@ class FileUtils {
             if let array = arr {
                 for i in 0 ..< array.count {
                     let fullPath = path.appendingPathComponent(array[i])
-//                    var isDir = ObjCBool(true)
+//                    var isDir = ObjCBool.init(true)
 //                    if (!(fm.fileExistsAtPath(fullPath, isDirectory: &isDir) && isDir)) {
 //                        let fileAttributeDic = try fm.attributesOfItem(atPath: fullPath)
 //                        size = size + (fileAttributeDic["NSFileSize"] as! NSNumber).longLongValue
