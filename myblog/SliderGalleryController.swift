@@ -49,6 +49,7 @@ class SliderGalleryController: UIViewController,UIScrollViewDelegate{
     //自动滚动计时器
     var autoScrollTimer:Timer?
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -138,13 +139,14 @@ class SliderGalleryController: UIViewController,UIScrollViewDelegate{
     //每当滚动后重新设置各个imageView的图片
     func resetImageViewSource() {
         //当前显示的是第一张图片
+        
         if self.currentIndex == 0 {
             self.leftImageView?.sd_setImage(with: URL(string: server_url + self.dataSource!.last!), placeholderImage: placeholderImage)
             self.middleImageView?.sd_setImage(with:URL(string:server_url + self.dataSource!.first!),placeholderImage: placeholderImage)
             let rightImageIndex = (self.dataSource?.count)!>1 ? 1 : 0 //保护
             self.rightImageView?.sd_setImage(with:URL(string:server_url + self.dataSource![rightImageIndex]),placeholderImage: placeholderImage)
         }
-        //当前显示的是最好一张图片
+        //当前显示的是最后一张图片
         else if self.currentIndex == (self.dataSource?.count)! - 1 {
             self.leftImageView?.sd_setImage(with: URL(string: server_url + self.dataSource![self.currentIndex-1]), placeholderImage: placeholderImage)
             self.middleImageView?.sd_setImage(with:URL(string:server_url + self.dataSource!.last!),placeholderImage: placeholderImage)
@@ -209,6 +211,10 @@ class SliderGalleryController: UIViewController,UIScrollViewDelegate{
         configureAutoScrollTimer()
         
     }
+    
+    
+  
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

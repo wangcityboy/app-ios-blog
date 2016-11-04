@@ -64,8 +64,11 @@ class PhotoDetailViewController: UIViewController,SliderGalleryControllerDelegat
     func handleTapAction(_ tap:UITapGestureRecognizer)->Void{
         //获取图片索引值
         let index = sliderGallery.currentIndex
+        
+        let title = self.model.dName!
+        
         //弹出索引信息
-        let alertController = UIAlertController(title: "您点击的图片索引是：",message: "\(index)", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "图片标题与索引：",message: "\(title)"+"\(index)", preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: "确定", style: .cancel, handler: nil)
         alertController.addAction(cancelAction)
         self.present(alertController, animated: true, completion: nil)

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ImageItem: NSObject {
+class BackgroundList: NSObject {
     var dId = String()
     var dImage = String()
 }

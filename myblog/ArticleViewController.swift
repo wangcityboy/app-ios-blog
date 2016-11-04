@@ -98,7 +98,6 @@ extension ArticleViewController{
         
         self.tableView.addLegendFooter { () -> Void in
             self.loadMoreData()
-            
         }
     }
     

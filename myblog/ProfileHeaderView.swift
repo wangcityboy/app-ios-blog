@@ -8,9 +8,12 @@
 
 import UIKit
 
+protocol HeaderViewDelegate: NSObjectProtocol {
+    func headerViewheadbuttonClick()
+}
 
-class UserAvatarView: UIView,UIGestureRecognizerDelegate {
-    var dataSource:[ImageItem] = []
+class ProfileHeaderView: UIView {
+    var dataSource:[BackgroundList] = []
     
     //背景图像
     var bgurl:String?{
@@ -22,15 +25,14 @@ class UserAvatarView: UIView,UIGestureRecognizerDelegate {
         }
     }
     
-    
     //性别
     var sex:String?{
         didSet {
             if(sex != nil){
                 if(sex == "男"){
-                    _iconView.image = UIImage(named: "n_sex_man_icon")
+                    _sexView.image = UIImage(named: "n_sex_man_icon")
                 }else{
-                    _iconView.image = UIImage(named: "n_sex_woman_icon")
+                    _sexView.image = UIImage(named: "n_sex_woman_icon")
                 }
             }
         }
@@ -54,16 +56,18 @@ class UserAvatarView: UIView,UIGestureRecognizerDelegate {
         }
     }
     
-    var _avatarImageView: AvatarImageView!
     var _profileBg: UIImageView!
-    var _iconView:UIImageView!
+    var _avatarImageView: AvatarImageView!
+    var _sexView:UIImageView!
     var _nameLabel: UILabel!;
     var _titleView:UIView!
+    
+    weak var delegate :HeaderViewDelegate?
     
     var initialFrame:CGRect!;
     var initialHeight:CGFloat!;
     
-    public var tapLoginCallBack:(()->Bool)?
+
 
     
     override init(frame: CGRect) {
@@ -90,34 +94,28 @@ class UserAvatarView: UIView,UIGestureRecognizerDelegate {
             _nameLabel.frame = CGRect(x:(mainScreenWidth-100)/2, y:0, width:100, height:20)
             _nameLabel.textColor = UIColor.white
             _nameLabel.textAlignment = NSTextAlignment.center;
-            _iconView.frame = CGRect(x:self._nameLabel.frame.width+self._nameLabel.origin.x+4, y:2, width:16, height:16)
-            _iconView.isHidden = true
+            _sexView.frame = CGRect(x:self._nameLabel.frame.width+self._nameLabel.origin.x+4, y:2, width:16, height:16)
+            _sexView.isHidden = true
         }else{
             _nameLabel.frame = CGRect(x:(mainScreenWidth-160)/2, y:0, width:100, height:20)
             _nameLabel.textAlignment = NSTextAlignment.right;
-            _iconView.frame = CGRect(x:self._nameLabel.frame.width+self._nameLabel.origin.x+4, y:2, width:16, height:16)
-            _iconView.isHidden = false
+            _sexView.frame = CGRect(x:self._nameLabel.frame.width+self._nameLabel.origin.x+4, y:2, width:16, height:16)
+            _sexView.isHidden = false
         }
         
     }
 
     
-    func tapLogin(recognizer:UITapGestureRecognizer) {
-        if (self.tapLoginCallBack != nil) {
-            self.tapLoginCallBack!()
-        }
-    }
-
-    
-    override func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
-        return true
+    func headimageClick(){
+        delegate?.headerViewheadbuttonClick()
     }
 
 }
 
 
-extension UserAvatarView {
+extension ProfileHeaderView:UIGestureRecognizerDelegate{
     
+
     
     func scrollViewDidScroll(_ scrollView: UIScrollView){
         if scrollView.contentOffset.y < 0 {
@@ -129,6 +127,8 @@ extension UserAvatarView {
     }
     
     public func _initViews() {
+        
+
   
         _profileBg = UIImageView()
         _profileBg.frame = self.frame
@@ -146,7 +146,7 @@ extension UserAvatarView {
         _avatarImageView = AvatarImageView(frame: CGRect.zero)
         _profileBg.addSubview(_avatarImageView);
         
-        let tap = UITapGestureRecognizer(target:self,action:#selector(tapLogin))
+        let tap = UITapGestureRecognizer(target:self,action:#selector(headimageClick))
         _avatarImageView.isUserInteractionEnabled = true
         _avatarImageView.addGestureRecognizer(tap)
         
@@ -156,16 +156,23 @@ extension UserAvatarView {
         _nameLabel.textColor = UIColor.white
         _titleView.addSubview(_nameLabel);
         
-        let tap2 = UITapGestureRecognizer(target:self,action:#selector(tapLogin))
+        let tap2 = UITapGestureRecognizer(target:self,action:#selector(headimageClick))
         self._nameLabel.isUserInteractionEnabled = true
         self._nameLabel.addGestureRecognizer(tap2)
         
         
-        _iconView = UIImageView()
-        _iconView.contentMode = UIViewContentMode.scaleAspectFit
+        _sexView = UIImageView()
+        _sexView.contentMode = UIViewContentMode.scaleAspectFit
        
-        _titleView.addSubview(_iconView)
+        _titleView.addSubview(_sexView)
         
+    }
+    
+  
+    
+    
+    override func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
     }
  
 }

@@ -50,8 +50,8 @@
 		AF7F1E371DB9FC5100CB4FF4 /* PhotoDirList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7F1E361DB9FC5000CB4FF4 /* PhotoDirList.swift */; };
 		AF7F1E391DB9FCAB00CB4FF4 /* JXExts.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7F1E381DB9FCAB00CB4FF4 /* JXExts.swift */; };
 		AF7F1E411DBA0A9800CB4FF4 /* UserList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7F1E401DBA0A9800CB4FF4 /* UserList.swift */; };
-		AF7F1E431DBA0AA400CB4FF4 /* ImageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7F1E421DBA0AA400CB4FF4 /* ImageItem.swift */; };
-		AF7F1E451DBA0AAF00CB4FF4 /* UserAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7F1E441DBA0AAF00CB4FF4 /* UserAvatarView.swift */; };
+		AF7F1E431DBA0AA400CB4FF4 /* BackgroundList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7F1E421DBA0AA400CB4FF4 /* BackgroundList.swift */; };
+		AF7F1E451DBA0AAF00CB4FF4 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7F1E441DBA0AAF00CB4FF4 /* ProfileHeaderView.swift */; };
 		AF7F1E471DBA0B8800CB4FF4 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7F1E461DBA0B8800CB4FF4 /* ProfileTableViewCell.swift */; };
 		AF7F1E491DBA0C6400CB4FF4 /* UIView+Positioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7F1E481DBA0C6400CB4FF4 /* UIView+Positioning.swift */; };
 		AF7F1E4B1DBA0CD600CB4FF4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7F1E4A1DBA0CD600CB4FF4 /* LoginViewController.swift */; };
@@ -77,7 +77,7 @@
 		AFF1ED121DBE06040044EB86 /* WeixinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF1ED111DBE06040044EB86 /* WeixinViewController.swift */; };
 		AFF1ED141DBE06320044EB86 /* MyBlogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF1ED131DBE06320044EB86 /* MyBlogViewController.swift */; };
 		AFF1ED161DBEF1900044EB86 /* SliderGalleryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF1ED151DBEF1900044EB86 /* SliderGalleryController.swift */; };
-		AFF1ED1F1DBF13AF0044EB86 /* TitleRImageMoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF1ED1D1DBF13AF0044EB86 /* TitleRImageMoreCell.swift */; };
+		AFF1ED1F1DBF13AF0044EB86 /* TitleRImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF1ED1D1DBF13AF0044EB86 /* TitleRImageCell.swift */; };
 		AFF1ED201DBF13AF0044EB86 /* UserInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF1ED1E1DBF13AF0044EB86 /* UserInfoTableViewCell.swift */; };
 		AFF1ED231DBF33E00044EB86 /* StarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF1ED211DBF33E00044EB86 /* StarView.swift */; };
 		AFF1ED241DBF33E00044EB86 /* ProjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF1ED221DBF33E00044EB86 /* ProjectTableViewCell.swift */; };
@@ -172,8 +172,8 @@
 		AF7F1E361DB9FC5000CB4FF4 /* PhotoDirList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoDirList.swift; sourceTree = "<group>"; };
 		AF7F1E381DB9FCAB00CB4FF4 /* JXExts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXExts.swift; sourceTree = "<group>"; };
 		AF7F1E401DBA0A9800CB4FF4 /* UserList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserList.swift; sourceTree = "<group>"; };
-		AF7F1E421DBA0AA400CB4FF4 /* ImageItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageItem.swift; sourceTree = "<group>"; };
-		AF7F1E441DBA0AAF00CB4FF4 /* UserAvatarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAvatarView.swift; sourceTree = "<group>"; };
+		AF7F1E421DBA0AA400CB4FF4 /* BackgroundList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundList.swift; sourceTree = "<group>"; };
+		AF7F1E441DBA0AAF00CB4FF4 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		AF7F1E461DBA0B8800CB4FF4 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		AF7F1E481DBA0C6400CB4FF4 /* UIView+Positioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Positioning.swift"; sourceTree = "<group>"; };
 		AF7F1E4A1DBA0CD600CB4FF4 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -199,7 +199,7 @@
 		AFF1ED111DBE06040044EB86 /* WeixinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeixinViewController.swift; sourceTree = "<group>"; };
 		AFF1ED131DBE06320044EB86 /* MyBlogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBlogViewController.swift; sourceTree = "<group>"; };
 		AFF1ED151DBEF1900044EB86 /* SliderGalleryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderGalleryController.swift; sourceTree = "<group>"; };
-		AFF1ED1D1DBF13AF0044EB86 /* TitleRImageMoreCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleRImageMoreCell.swift; sourceTree = "<group>"; };
+		AFF1ED1D1DBF13AF0044EB86 /* TitleRImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleRImageCell.swift; sourceTree = "<group>"; };
 		AFF1ED1E1DBF13AF0044EB86 /* UserInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoTableViewCell.swift; sourceTree = "<group>"; };
 		AFF1ED211DBF33E00044EB86 /* StarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarView.swift; sourceTree = "<group>"; };
 		AFF1ED221DBF33E00044EB86 /* ProjectTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectTableViewCell.swift; sourceTree = "<group>"; };
@@ -354,15 +354,12 @@
 		AF49A5E61DB619730023A2FF /* profile */ = {
 			isa = PBXGroup;
 			children = (
+				AFE952EF1DCC649500BE0297 /* personal */,
+				AFE952EE1DCC641000BE0297 /* login */,
+				AFE952ED1DCC63ED00BE0297 /* settting */,
+				AFE952EC1DCC5CEF00BE0297 /* userinfo */,
+				AFE952EB1DCC5CD700BE0297 /* project */,
 				AFF1ED1C1DBF035A0044EB86 /* others */,
-				AF7F1E461DBA0B8800CB4FF4 /* ProfileTableViewCell.swift */,
-				AF49A5E71DB619990023A2FF /* ProfileViewController.swift */,
-				AF7F1E421DBA0AA400CB4FF4 /* ImageItem.swift */,
-				AF7F1E441DBA0AAF00CB4FF4 /* UserAvatarView.swift */,
-				AF7F1E401DBA0A9800CB4FF4 /* UserList.swift */,
-				AF7F1E4A1DBA0CD600CB4FF4 /* LoginViewController.swift */,
-				AF7F1E561DBA0FCC00CB4FF4 /* AvatarImageView.swift */,
-				AF7F1E501DBA0D8A00CB4FF4 /* SettingViewController.swift */,
 			);
 			name = profile;
 			sourceTree = "<group>";
@@ -462,6 +459,61 @@
 			name = setting;
 			sourceTree = "<group>";
 		};
+		AFE952EB1DCC5CD700BE0297 /* project */ = {
+			isa = PBXGroup;
+			children = (
+				AFF1ED221DBF33E00044EB86 /* ProjectTableViewCell.swift */,
+				AFF1ED211DBF33E00044EB86 /* StarView.swift */,
+				AFF1ED251DBF35730044EB86 /* ProjectList.swift */,
+				AF7F1E4E1DBA0D7A00CB4FF4 /* ProjectViewController.swift */,
+			);
+			name = project;
+			sourceTree = "<group>";
+		};
+		AFE952EC1DCC5CEF00BE0297 /* userinfo */ = {
+			isa = PBXGroup;
+			children = (
+				AF7F1E521DBA0DCF00CB4FF4 /* UserInfoViewController.swift */,
+				AFF1ED1E1DBF13AF0044EB86 /* UserInfoTableViewCell.swift */,
+				AFF1ED1D1DBF13AF0044EB86 /* TitleRImageCell.swift */,
+				AF7F1E401DBA0A9800CB4FF4 /* UserList.swift */,
+			);
+			name = userinfo;
+			sourceTree = "<group>";
+		};
+		AFE952ED1DCC63ED00BE0297 /* settting */ = {
+			isa = PBXGroup;
+			children = (
+				AF7F1E501DBA0D8A00CB4FF4 /* SettingViewController.swift */,
+				AFF1ED111DBE06040044EB86 /* WeixinViewController.swift */,
+				AFF1ED131DBE06320044EB86 /* MyBlogViewController.swift */,
+				AFF1ED0F1DBE05C90044EB86 /* SinaWeiboViewController.swift */,
+			);
+			name = settting;
+			sourceTree = "<group>";
+		};
+		AFE952EE1DCC641000BE0297 /* login */ = {
+			isa = PBXGroup;
+			children = (
+				AFF1ED071DBDA5D20044EB86 /* RegisterViewController.swift */,
+				AF7F1E4A1DBA0CD600CB4FF4 /* LoginViewController.swift */,
+				AFF1ED091DBDA6120044EB86 /* ResetPasswordViewController.swift */,
+			);
+			name = login;
+			sourceTree = "<group>";
+		};
+		AFE952EF1DCC649500BE0297 /* personal */ = {
+			isa = PBXGroup;
+			children = (
+				AF49A5E71DB619990023A2FF /* ProfileViewController.swift */,
+				AF7F1E441DBA0AAF00CB4FF4 /* ProfileHeaderView.swift */,
+				AF7F1E461DBA0B8800CB4FF4 /* ProfileTableViewCell.swift */,
+				AF7F1E421DBA0AA400CB4FF4 /* BackgroundList.swift */,
+				AF7F1E561DBA0FCC00CB4FF4 /* AvatarImageView.swift */,
+			);
+			name = personal;
+			sourceTree = "<group>";
+		};
 		AFF1ED171DBEF3770044EB86 /* ImageHelper */ = {
 			isa = PBXGroup;
 			children = (
@@ -474,19 +526,7 @@
 		AFF1ED1C1DBF035A0044EB86 /* others */ = {
 			isa = PBXGroup;
 			children = (
-				AFF1ED1D1DBF13AF0044EB86 /* TitleRImageMoreCell.swift */,
-				AFF1ED1E1DBF13AF0044EB86 /* UserInfoTableViewCell.swift */,
 				AF7F1E4C1DBA0D6B00CB4FF4 /* LifeAssistantViewController.swift */,
-				AF7F1E4E1DBA0D7A00CB4FF4 /* ProjectViewController.swift */,
-				AFF1ED251DBF35730044EB86 /* ProjectList.swift */,
-				AFF1ED211DBF33E00044EB86 /* StarView.swift */,
-				AFF1ED221DBF33E00044EB86 /* ProjectTableViewCell.swift */,
-				AF7F1E521DBA0DCF00CB4FF4 /* UserInfoViewController.swift */,
-				AFF1ED071DBDA5D20044EB86 /* RegisterViewController.swift */,
-				AFF1ED091DBDA6120044EB86 /* ResetPasswordViewController.swift */,
-				AFF1ED0F1DBE05C90044EB86 /* SinaWeiboViewController.swift */,
-				AFF1ED111DBE06040044EB86 /* WeixinViewController.swift */,
-				AFF1ED131DBE06320044EB86 /* MyBlogViewController.swift */,
 			);
 			name = others;
 			sourceTree = "<group>";
@@ -695,7 +735,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF7F1E431DBA0AA400CB4FF4 /* ImageItem.swift in Sources */,
+				AF7F1E431DBA0AA400CB4FF4 /* BackgroundList.swift in Sources */,
 				AF7F1E531DBA0DCF00CB4FF4 /* UserInfoViewController.swift in Sources */,
 				AF7F1E471DBA0B8800CB4FF4 /* ProfileTableViewCell.swift in Sources */,
 				AFB571171DC44B150022EF01 /* ImageViewController.swift in Sources */,
@@ -739,13 +779,13 @@
 				AFF1ED0A1DBDA6120044EB86 /* ResetPasswordViewController.swift in Sources */,
 				AF49A6261DB61F690023A2FF /* Macro.swift in Sources */,
 				AF49A61E1DB61CE20023A2FF /* UIScrollView+MJRefresh.m in Sources */,
-				AFF1ED1F1DBF13AF0044EB86 /* TitleRImageMoreCell.swift in Sources */,
+				AFF1ED1F1DBF13AF0044EB86 /* TitleRImageCell.swift in Sources */,
 				AF7F1E371DB9FC5100CB4FF4 /* PhotoDirList.swift in Sources */,
 				AF49A6221DB61D7D0023A2FF /* Constants.swift in Sources */,
 				AF7F1E391DB9FCAB00CB4FF4 /* JXExts.swift in Sources */,
 				AF49A61F1DB61CE20023A2FF /* UIView+MJExtension.m in Sources */,
 				AF7F1E411DBA0A9800CB4FF4 /* UserList.swift in Sources */,
-				AF7F1E451DBA0AAF00CB4FF4 /* UserAvatarView.swift in Sources */,
+				AF7F1E451DBA0AAF00CB4FF4 /* ProfileHeaderView.swift in Sources */,
 				AF49A62B1DB621690023A2FF /* AdvertiseList.swift in Sources */,
 				AF7F1E491DBA0C6400CB4FF4 /* UIView+Positioning.swift in Sources */,
 				AF49A5EE1DB619CE0023A2FF /* HomeViewController.swift in Sources */,

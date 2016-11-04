@@ -12,23 +12,21 @@ import Alamofire
 import SwiftyJSON
 
 
-class ProfileViewController:UIViewController,UIScrollViewDelegate{
+class ProfileViewController:UIViewController{
     
     var titleArray = [["个人信息"],["生活助手","我的项目","音乐之声","我的收藏"],["系统设置"]];
     var imageArray = [["user_info_detail"],["user_info_tweet","user_info_project","user_info_music","user_info_topic"],["user_info_set"]];
     
     
-    var profileHeaderView:UserAvatarView!
+    var profileHeaderView:ProfileHeaderView!
     var tableView: UITableView!
     var userSource:[UserList] = []
-    var imageSource:[ImageItem] = []
+    var bgSource:[BackgroundList] = []
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "个人中心"
-        
         _setupTableView()
         _loadBackgroundImage()
         
@@ -48,8 +46,9 @@ class ProfileViewController:UIViewController,UIScrollViewDelegate{
 }
 
 
-extension ProfileViewController{
+extension ProfileViewController:HeaderViewDelegate,UIScrollViewDelegate{
     
+
     
     func _setupTableView() {
         tableView = UITableView(frame:CGRect(x:0, y:0, width:mainScreenWidth, height:mainScreenHeight-49), style: UITableViewStyle.plain);
@@ -60,8 +59,8 @@ extension ProfileViewController{
         self.view.addSubview(tableView);
         tableView.register(ProfileTableViewCell.self, forCellReuseIdentifier: "CellIdentifier");
         
-        let avatarView = UserAvatarView(frame: CGRect(x:0, y:0, width:mainScreenWidth, height:250));
-        self.tableView.tableHeaderView = avatarView;
+        let headerView = ProfileHeaderView(frame: CGRect(x:0, y:0, width:mainScreenWidth, height:250));
+        self.tableView.tableHeaderView = headerView;
         self.tableView.tableFooterView = UIView()
     }
     
@@ -70,20 +69,10 @@ extension ProfileViewController{
     
     
     public func _initHeaderView(){
-        profileHeaderView = self.tableView.tableHeaderView as! UserAvatarView
-        profileHeaderView.tapLoginCallBack = {
-            if(((userDefaults.object(forKey: "nickname") as? String)) == nil){
-                //用户未登录
-                let login = LoginViewController()
-                let nextNV = UINavigationController(rootViewController: login)
-                self.present(nextNV, animated: true, completion: nil)
-                return true
-            }else{
-                return false
-            }
-            
-        }
-        
+        profileHeaderView = self.tableView.tableHeaderView as! ProfileHeaderView
+        profileHeaderView.delegate = self
+
+       
         //判断用户是否登录--用户未登录
         if(((userDefaults.object(forKey: "nickname") as? String)) == nil){
             self.profileHeaderView.avatarImageURL = nil
@@ -98,6 +87,18 @@ extension ProfileViewController{
     }
     
     
+    func headerViewheadbuttonClick() {
+        if(((userDefaults.object(forKey: "nickname") as? String)) == nil){
+            //用户未登录
+            let login = LoginViewController()
+            let nextNV = UINavigationController(rootViewController: login)
+            self.present(nextNV, animated: true, completion: nil)
+        }else{
+            print("登录后修改用户头像功能暂未开发")
+        }
+    }
+    
+    
     //获取网络背景图片
     func _loadBackgroundImage(){
         let url = URL(string: background_url)!
@@ -106,12 +107,12 @@ extension ProfileViewController{
             case .success:
                 if let value = response.result.value {
                     let json = JSON(value)["data"]
-                    let imageItem = ImageItem()
-                    imageItem.dId = json["tg_id"].string!
-                    imageItem.dImage = json["tg_img"].string!
-                    self.imageSource.append(imageItem)
+                    let bgItem = BackgroundList()
+                    bgItem.dId = json["tg_id"].string!
+                    bgItem.dImage = json["tg_img"].string!
+                    self.bgSource.append(bgItem)
                 }
-                self.profileHeaderView.bgurl = self.imageSource[0].dImage as String
+                self.profileHeaderView.bgurl = self.bgSource[0].dImage as String
             case .failure:
                 DispatchQueue.main.async {() -> Void in
                     SCLAlertView().showWarning("温馨提示", subTitle:"您的网络在开小差,赶紧制服它", closeButtonTitle:"去制服")
@@ -136,7 +137,7 @@ extension ProfileViewController{
             switch response.result {
             case .success:
                 if let value = response.result.value {
-                    let json = JSON(value)["data"]
+                    let json = JSON(value)["data"][0]
                     if (JSON(value)["code"] == 200){
                             let uItem = UserList()
                             uItem.dUsername = json["tg_username"].string!
@@ -162,6 +163,10 @@ extension ProfileViewController{
             
         }
         
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        self.profileHeaderView.scrollViewDidScroll(scrollView)
     }
     
 }
@@ -261,9 +266,7 @@ extension ProfileViewController:UITableViewDataSource,UITableViewDelegate{
     }
     
     
-    func scrollViewDidScroll(scrollView: UIScrollView) {
-        self.profileHeaderView.scrollViewDidScroll(scrollView)
-    }
+    
     
 }
 

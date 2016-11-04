@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import SCLAlertView
 
 
-class UserInfoViewController: DismissViewController{
+class UserInfoViewController: DismissViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIActionSheetDelegate{
     
     var userList:[UserList] = []
     
@@ -18,7 +19,7 @@ class UserInfoViewController: DismissViewController{
         tableView.delegate = self;
         tableView.dataSource = self;
         tableView.register(UserInfoTableViewCell.self, forCellReuseIdentifier: "UserInfoCell")
-        tableView.register(TitleRImageMoreCell.self, forCellReuseIdentifier: "TitleRImageCell")
+        tableView.register(TitleRImageCell.self, forCellReuseIdentifier: "TitleRImageCell")
         return tableView;
     }();
     
@@ -71,7 +72,7 @@ extension UserInfoViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if (indexPath.section == 0 && indexPath.row == 0) {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "TitleRImageCell") as! TitleRImageMoreCell;
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TitleRImageCell") as! TitleRImageCell;
             cell.accessoryType = .none
             cell.bgUrl = server_url + "/" + (userList[0].dFace)
             cell.name = "用户头像"
@@ -147,9 +148,62 @@ extension UserInfoViewController:UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if(indexPath.section == 0 && indexPath.row == 0){
-            showAlertDefault()
+            myheadViewheadbuttonCLick()
         }
     }
+    
+    
+    func myheadViewheadbuttonCLick() {
+        let alertController = UIAlertController()
+        //是否支持相机
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            alertController.addAction(UIAlertAction.init(title: "从相册中选取", style: .default, handler: { (action1:UIAlertAction) in
+                let imagePickerController1 = UIImagePickerController()
+                imagePickerController1.delegate = self
+                imagePickerController1.allowsEditing = true
+                imagePickerController1.sourceType = .photoLibrary
+                self.present(imagePickerController1, animated: true, completion: nil)
+            }))
+            //相机
+            alertController.addAction(UIAlertAction.init(title: "拍照", style: .default, handler: { (action2:UIAlertAction ) in
+                let imagePickerController2 = UIImagePickerController()
+                imagePickerController2.delegate = self
+                imagePickerController2.allowsEditing = true
+                imagePickerController2.sourceType = .camera
+                self.present(imagePickerController2, animated: true, completion: nil)
+            }))
+            //取消
+            alertController.addAction(UIAlertAction.init(title: "取消", style: .cancel, handler: { (action3:UIAlertAction ) in
+                return
+            }))
+            self.present(alertController, animated: true, completion: nil)
+        }else{
+             SCLAlertView().showWarning("温馨提示", subTitle: "你的设备不支持手机拍照功能", closeButtonTitle: "确定")
+        }
+        
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        picker.dismiss(animated: true, completion: nil)
+        let image:UIImage = info[UIImagePickerControllerEditedImage] as! UIImage
+        
+//        headview.headimage.setImage(image, for: .normal)
+        
+        picker.dismiss(animated: true, completion: nil)
+        self .saveImage(image: image, name: "headView.png")
+        
+        
+    }
+    
+    func saveImage(image:UIImage, name:String){
+        let ImageData:Data = UIImageJPEGRepresentation(image, 0.8)!
+        let fullPath:String = NSHomeDirectory() + "/Documents/" + name
+        
+        let imageNSDate: NSData = NSData.init(data: ImageData)
+        imageNSDate.write(toFile: fullPath, atomically: true)
+        
+    }
+    
     
     
     func showAlertReset(){
