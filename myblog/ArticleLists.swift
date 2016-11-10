@@ -18,6 +18,4 @@ class ArticleLists:NSObject{
     var aDate = String()
     var aReadcount = String()
 
-        
-  
 }

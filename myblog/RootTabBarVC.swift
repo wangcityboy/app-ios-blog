@@ -12,7 +12,7 @@ import RDVTabBarController
 
 class RootTabBarVC: RDVTabBarController {
     
-    var  HomeViewVC: HomeViewController?
+    var  HomeViewVC: IndexViewController?
     var  HomeViewNC: UINavigationController?
     
     var  ArticleViewVC: ArticleViewController?
@@ -48,7 +48,7 @@ class RootTabBarVC: RDVTabBarController {
 
     func configureViewControllers() {
     
-        self.HomeViewVC = HomeViewController()
+        self.HomeViewVC = IndexViewController()
         self.HomeViewNC = UINavigationController(rootViewController: self.HomeViewVC!)
         
         self.ArticleViewVC = ArticleViewController()

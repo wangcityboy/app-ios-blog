@@ -42,6 +42,11 @@
 		AF49A62D1DB621A20023A2FF /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF49A62C1DB621A20023A2FF /* StringUtils.swift */; };
 		AF49A62F1DB621C70023A2FF /* HomeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF49A62E1DB621C70023A2FF /* HomeDetailViewController.swift */; };
 		AF49A6311DB870660023A2FF /* ArticleLists.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF49A6301DB870660023A2FF /* ArticleLists.swift */; };
+		AF65171A1DD4469C00BC10AB /* IndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6517191DD4469C00BC10AB /* IndexViewController.swift */; };
+		AF65171C1DD447AC00BC10AB /* IndexTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF65171B1DD447AC00BC10AB /* IndexTableCell.swift */; };
+		AF65171E1DD4480200BC10AB /* Indexmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF65171D1DD4480200BC10AB /* Indexmodel.swift */; };
+		AF6517201DD452B000BC10AB /* IndexDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF65171F1DD452B000BC10AB /* IndexDetailViewController.swift */; };
+		AF6517221DD4532D00BC10AB /* MyWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6517211DD4532D00BC10AB /* MyWebView.swift */; };
 		AF7F1E291DB8CA3A00CB4FF4 /* UIViewController+HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7F1E281DB8CA3A00CB4FF4 /* UIViewController+HUD.swift */; };
 		AF7F1E2B1DB9C10200CB4FF4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7F1E2A1DB9C10200CB4FF4 /* BaseViewController.swift */; };
 		AF7F1E2F1DB9C40B00CB4FF4 /* ArticleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7F1E2E1DB9C40B00CB4FF4 /* ArticleDetailViewController.swift */; };
@@ -164,6 +169,11 @@
 		AF49A62C1DB621A20023A2FF /* StringUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
 		AF49A62E1DB621C70023A2FF /* HomeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeDetailViewController.swift; sourceTree = "<group>"; };
 		AF49A6301DB870660023A2FF /* ArticleLists.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleLists.swift; sourceTree = "<group>"; };
+		AF6517191DD4469C00BC10AB /* IndexViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexViewController.swift; sourceTree = "<group>"; };
+		AF65171B1DD447AC00BC10AB /* IndexTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexTableCell.swift; sourceTree = "<group>"; };
+		AF65171D1DD4480200BC10AB /* Indexmodel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Indexmodel.swift; sourceTree = "<group>"; };
+		AF65171F1DD452B000BC10AB /* IndexDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexDetailViewController.swift; sourceTree = "<group>"; };
+		AF6517211DD4532D00BC10AB /* MyWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyWebView.swift; sourceTree = "<group>"; };
 		AF7F1E281DB8CA3A00CB4FF4 /* UIViewController+HUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+HUD.swift"; sourceTree = "<group>"; };
 		AF7F1E2A1DB9C10200CB4FF4 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		AF7F1E2E1DB9C40B00CB4FF4 /* ArticleDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleDetailViewController.swift; sourceTree = "<group>"; };
@@ -310,6 +320,7 @@
 		AF49A5DF1DB6165F0023A2FF /* base */ = {
 			isa = PBXGroup;
 			children = (
+				AF6517211DD4532D00BC10AB /* MyWebView.swift */,
 				AF7F1E2A1DB9C10200CB4FF4 /* BaseViewController.swift */,
 				AFF1ED051DBDA3F70044EB86 /* DismissViewController.swift */,
 				AF49A5E01DB6166F0023A2FF /* RootTabBarVC.swift */,
@@ -323,6 +334,10 @@
 				AF49A5ED1DB619CE0023A2FF /* HomeViewController.swift */,
 				AF49A62A1DB621690023A2FF /* AdvertiseList.swift */,
 				AF49A62E1DB621C70023A2FF /* HomeDetailViewController.swift */,
+				AF6517191DD4469C00BC10AB /* IndexViewController.swift */,
+				AF65171B1DD447AC00BC10AB /* IndexTableCell.swift */,
+				AF65171D1DD4480200BC10AB /* Indexmodel.swift */,
+				AF65171F1DD452B000BC10AB /* IndexDetailViewController.swift */,
 			);
 			name = home;
 			sourceTree = "<group>";
@@ -772,10 +787,12 @@
 				AFF1ED161DBEF1900044EB86 /* SliderGalleryController.swift in Sources */,
 				AFB5711B1DC49D360022EF01 /* PhotoTableViewCell.swift in Sources */,
 				AFF1ED081DBDA5D20044EB86 /* RegisterViewController.swift in Sources */,
+				AF6517221DD4532D00BC10AB /* MyWebView.swift in Sources */,
 				AFE952E81DCB059800BE0297 /* PhotoDetailViewController.swift in Sources */,
 				AF7F1E2F1DB9C40B00CB4FF4 /* ArticleDetailViewController.swift in Sources */,
 				AF7F1E571DBA0FCC00CB4FF4 /* AvatarImageView.swift in Sources */,
 				AF7F1E291DB8CA3A00CB4FF4 /* UIViewController+HUD.swift in Sources */,
+				AF65171C1DD447AC00BC10AB /* IndexTableCell.swift in Sources */,
 				AFF1ED0A1DBDA6120044EB86 /* ResetPasswordViewController.swift in Sources */,
 				AF49A6261DB61F690023A2FF /* Macro.swift in Sources */,
 				AF49A61E1DB61CE20023A2FF /* UIScrollView+MJRefresh.m in Sources */,
@@ -783,8 +800,11 @@
 				AF7F1E371DB9FC5100CB4FF4 /* PhotoDirList.swift in Sources */,
 				AF49A6221DB61D7D0023A2FF /* Constants.swift in Sources */,
 				AF7F1E391DB9FCAB00CB4FF4 /* JXExts.swift in Sources */,
+				AF6517201DD452B000BC10AB /* IndexDetailViewController.swift in Sources */,
 				AF49A61F1DB61CE20023A2FF /* UIView+MJExtension.m in Sources */,
+				AF65171A1DD4469C00BC10AB /* IndexViewController.swift in Sources */,
 				AF7F1E411DBA0A9800CB4FF4 /* UserList.swift in Sources */,
+				AF65171E1DD4480200BC10AB /* Indexmodel.swift in Sources */,
 				AF7F1E451DBA0AAF00CB4FF4 /* ProfileHeaderView.swift in Sources */,
 				AF49A62B1DB621690023A2FF /* AdvertiseList.swift in Sources */,
 				AF7F1E491DBA0C6400CB4FF4 /* UIView+Positioning.swift in Sources */,

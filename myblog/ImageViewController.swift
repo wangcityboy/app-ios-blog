@@ -12,13 +12,11 @@ import DGElasticPullToRefresh
 import SwiftyJSON
 import SCLAlertView
 
-class ImageViewController:UIViewController,UITableViewDelegate,UITableViewDataSource,photoCellPushtoDetailDelegate{
+class ImageViewController:BaseViewController,UITableViewDelegate,UITableViewDataSource,photoCellPushtoDetailDelegate{
     
-    let limit:Int = 20
-    var offset:Int = 0
     let tableView=UITableView()
     var dataArray = NSMutableArray()
-    let wb = (UIScreen.main.bounds.width) / 750
+    let wb = mainScreenWidth / 750
     let refresh = UIRefreshControl()
     
     
@@ -51,7 +49,6 @@ class ImageViewController:UIViewController,UITableViewDelegate,UITableViewDataSo
         
     }
     func myrefresh(){
-        self.offset = self.offset + self.limit
         refresh.beginRefreshing()
         loadPhotoData(fresh: true)
     }
@@ -62,6 +59,7 @@ class ImageViewController:UIViewController,UITableViewDelegate,UITableViewDataSo
             if let JSON = response.result.value  {
                 let data : NSDictionary = (JSON as? NSDictionary)!
                  let array = data["data"] as? NSArray
+                
                 if(fresh){
                     self.dataArray.removeAllObjects()
                 }
