@@ -48,7 +48,7 @@ class PhotoTableViewCell: UITableViewCell {
         rightView.addGestureRecognizer(gesturnR)
         
         
-        self.backgroundColor = UIColor.gray
+        self.backgroundColor = UIColor.white
         
         
     }

@@ -17,7 +17,7 @@ class ImageViewController:BaseViewController,UITableViewDelegate,UITableViewData
     let tableView=UITableView()
     var dataArray = NSMutableArray()
     let wb = mainScreenWidth / 750
-    let refresh = UIRefreshControl()
+
     
     
     
@@ -25,7 +25,7 @@ class ImageViewController:BaseViewController,UITableViewDelegate,UITableViewData
         super.viewDidLoad()
         RootTabBarVC.normal(navigationController: self.navigationController!)
         title = "个人相册"
-        loadPhotoData(fresh: false)
+        _setupTableView()
     }
     
     
@@ -34,8 +34,8 @@ class ImageViewController:BaseViewController,UITableViewDelegate,UITableViewData
     }
     
     
-    func makeUI(){
-        self.tableView.frame = CGRect.init(x: 0, y:0, width: self.view.frame.size.width, height: self.view.frame.size.height)
+    func _setupTableView(){
+        self.tableView.frame = CGRect.init(x: 0, y:0, width: mainScreenWidth, height: mainScreenHeight-44-64)
         tableView.delegate = self
         tableView.dataSource = self
         self.view.addSubview(tableView)
@@ -43,34 +43,82 @@ class ImageViewController:BaseViewController,UITableViewDelegate,UITableViewData
         
         tableView.separatorStyle = UITableViewCellSeparatorStyle.none
         
-        refresh.addTarget(self, action: #selector(ImageViewController.myrefresh), for: UIControlEvents.valueChanged)
-        tableView.addSubview(refresh)
+        self.tableView.addLegendHeader { () -> Void in
+            self.tableView.footer.isHidden = true
+            self.loadNewData()
+        }
         
+        self.tableView.legendHeader.beginRefreshing()
         
+        self.tableView.addLegendFooter { () -> Void in
+            self.loadMoreData()
+        }
     }
-    func myrefresh(){
-        refresh.beginRefreshing()
-        loadPhotoData(fresh: true)
+    
+    // MARK: 下拉刷新数据
+    func loadNewData(){
+        PAGE_NUM = 1
+        loadPhotoData(offset: PAGE_NUM,size: SHOW_NUM)
+        
+        let delayInSeconds:Int64 = 1000000000 * 1
+        let time = DispatchTime.now() + Double(delayInSeconds) / Double(NSEC_PER_SEC)
+        DispatchQueue.main.asyncAfter(deadline: time) {
+            self.tableView.reloadData()
+            // 拿到当前的下拉刷新控件，结束刷新状态
+            self.tableView.header.endRefreshing()
+            self.tableView.footer.isHidden = false
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+        }
+    }
+    
+    // MARK: 上拉加载数据
+    func loadMoreData(){
+        PAGE_NUM += 1
+        loadPhotoData(offset: PAGE_NUM,size: SHOW_NUM)
+        let delayInSeconds:Int64 = 1000000000 * 2
+        let time = DispatchTime.now() + Double(delayInSeconds) / Double(NSEC_PER_SEC)
+        DispatchQueue.main.asyncAfter(deadline: time) {
+            self.tableView.reloadData()
+            self.tableView.footer.endRefreshing();
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+        }
     }
     
     
-    func  loadPhotoData(fresh:Bool){
-        Alamofire.request(photos_url,method:.get).validate().responseJSON { response in
-            if let JSON = response.result.value  {
-                let data : NSDictionary = (JSON as? NSDictionary)!
-                 let array = data["data"] as? NSArray
-                
-                if(fresh){
-                    self.dataArray.removeAllObjects()
-                }
-                for i in 0 ..< array!.count {
-                    let model = PhotosModel().setPhotomodelData(data: array?.object(at: i) as! NSDictionary)
-                    self.dataArray.add(model)
-                }
-                self.makeUI();
-                self.tableView.reloadData()
-                self.refresh.endRefreshing()
+    func  loadPhotoData(offset:Int, size:Int){
+        let parameters = [
+            "page":offset,
+            "pageSize":size
+        ]
+        Alamofire.request(photos_url,method:.get,parameters:parameters).validate().responseJSON { response in
+            switch response.result {
+                case .success:
+                    if let value = response.result.value  {
+                        let data : NSDictionary = (value as? NSDictionary)!
+                        let array = data["data"] as? NSArray
+                        if(self.PAGE_NUM == 1){
+                            self.dataArray.removeAllObjects()
+                        }
+                    
+                        if (JSON(value)["code"] == 200){
+                            for i in 0 ..< array!.count {
+                                let model = PhotosModel().setPhotomodelData(data: array?.object(at: i) as! NSDictionary)
+                                self.dataArray.add(model)
+                            }
+                        }else{
+                            self.tableView.footer.isHidden = false
+                            self.tableView.footer.noticeNoMoreData()
+                            self.tableView.footer.setTitle("亲，加载完毕了，没有数据了", for: MJRefreshFooterStateNoMoreData)
+                        }
+                    }
+                case .failure:
+                    DispatchQueue.main.async {() -> Void in
+                        SCLAlertView().showWarning("温馨提示", subTitle:"您的网络在开小差,赶紧制服它", closeButtonTitle:"去制服")
+                        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                        return
+                    }
             }
+            
         }
     }
     

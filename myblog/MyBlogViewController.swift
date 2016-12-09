@@ -20,7 +20,7 @@ class MyBlogViewController: BaseViewController {
         self.view.addSubview(webView)
         loadurl(url: "http://wanghaifeng.net")
         
-        SCLAlertView().showWarning("温馨提示", subTitle:"请在PC浏览器中访问,显示效果会更好,目前网页暂没有适配手机！", closeButtonTitle:"确定")
+        SCLAlertView().showWarning("温馨提示", subTitle:"请在PC端浏览器中访问『http://wanghaifeng.net』,显示效果会更好！", closeButtonTitle:"确定")
     }
     
     

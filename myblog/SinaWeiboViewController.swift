@@ -13,7 +13,7 @@ class SinaWeiboViewController: BaseViewController {
     lazy var webView: UIWebView = {
         let webView = UIWebView();
         webView.backgroundColor = UIColor.white;
-        webView.frame = CGRect(x:0, y:0, width:mainScreenWidth, height:mainScreenHeight)
+        webView.frame = CGRect(x:0, y:64, width:mainScreenWidth, height:mainScreenHeight-64)
         webView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(webView);
         return webView;

@@ -117,7 +117,6 @@ extension ArticleViewController{
                 self.tableView.footer.isHidden = false
                 UIApplication.shared.isNetworkActivityIndicatorVisible = false
         }
-        
     }
     
     // MARK: 上拉加载数据
@@ -131,7 +130,6 @@ extension ArticleViewController{
             self.tableView.footer.endRefreshing();
             UIApplication.shared.isNetworkActivityIndicatorVisible = false
         }
-
     }
     
     
