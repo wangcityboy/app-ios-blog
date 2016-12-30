@@ -163,14 +163,21 @@ class ImageViewController:BaseViewController,UITableViewDelegate,UITableViewData
     
     func photoCellPushtoDetail(isleft: Bool, tag: Int) {
         let vc = PhotoDetailViewController()
-        if(isleft){
+        
+       
+        if(isleft && (self.dataArray.object(at:tag*2) as! PhotosModel).dImages?.count != 1){
+            //如果获取到的tg_images字段为空的话，做一下处理比较好
             let leftModel:PhotosModel = self.dataArray.object(at:tag*2) as! PhotosModel
             vc.model = leftModel
-        }else{
+        }else if(!isleft && (self.dataArray.object(at:tag*2+1) as! PhotosModel).dImages?.count != 1){
             let rightModel:PhotosModel = self.dataArray.object(at:tag*2+1) as! PhotosModel
             vc.model = rightModel
+        }else{
+            SCLAlertView().showWarning("温馨提示", subTitle:"很抱歉，该相册无任何相片！", closeButtonTitle:"好的")
+            return
         }
-        self.navigationController?.pushViewController(vc, animated: true)
+            self.navigationController?.pushViewController(vc, animated: true)
+ 
     }
 
     

@@ -24,7 +24,6 @@ class IndexViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         super.viewDidLoad()
         self.automaticallyAdjustsScrollViewInsets = false
         self.navigationController?.isNavigationBarHidden = true
-        loadHomeInfo();
 
     }
     
@@ -32,6 +31,7 @@ class IndexViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     override func viewWillAppear(_ animated: Bool) {
         self.rdv_tabBarController.setTabBarHidden(false, animated: false)
         self.navigationController?.isNavigationBarHidden = true
+        loadHomeInfo();
     }
     
     
@@ -77,6 +77,7 @@ class IndexViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         tableView.dg_setPullToRefreshBackgroundColor(UIColor.blue)
         
     }
+    
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1

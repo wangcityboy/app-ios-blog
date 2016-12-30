@@ -127,9 +127,6 @@ extension ProfileHeaderView:UIGestureRecognizerDelegate{
     }
     
     public func _initViews() {
-        
-
-  
         _profileBg = UIImageView()
         _profileBg.frame = self.frame
         _profileBg.isUserInteractionEnabled = true

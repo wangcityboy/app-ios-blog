@@ -64,15 +64,24 @@ class PhotoTableViewCell: UITableViewCell {
     func setliftView(model:PhotosModel){
         let url = URL(string: server_url + model.dFace!)
         self.liftView.logo.kf.setImage(with: url)
-        self.liftView.name.text = model.dName! + "-[" + String(describing: (model.dImages?.count)!) + "]"
-        self.liftView.date.text = model.dDate
+        if(model.dImages?[0] as! String).isEmpty{
+            self.liftView.name.text = model.dName! + "-[" + "0" + "]"
+        }else{
+            self.liftView.name.text = model.dName! + "-[" + String(describing: (model.dImages?.count)!) + "]"
+        }
+        self.liftView.date.text = "游玩时间:"+StringUtils.formatStrDate(strDate:model.dDate!)
+        
     }
     
     func setrightView(model:PhotosModel){
         let url = URL(string: server_url +  model.dFace!)
         self.rightView.logo.kf.setImage(with: url)
-        self.rightView.name.text = model.dName! + "-[" + String(describing: (model.dImages?.count)!) + "]"
-        self.rightView.date.text = model.dDate
+        if(model.dImages?[0] as! String).isEmpty{
+            self.rightView.name.text = model.dName! + "-[" + "0" + "]"
+        }else{
+            self.rightView.name.text = model.dName! + "-[" + String(describing: (model.dImages?.count)!) + "]"
+        }
+        self.rightView.date.text = "游玩时间:"+StringUtils.formatStrDate(strDate:model.dDate!)
     }
     
     

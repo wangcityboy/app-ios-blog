@@ -93,7 +93,6 @@ class HomeDetailViewController:UIViewController{
 extension HomeDetailViewController:UIWebViewDelegate{
     private func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         if navigationType == UIWebViewNavigationType.linkClicked {
-            print(request.url)
             UIApplication.shared.openURL(request.url!)
             return false
         }else if navigationType == UIWebViewNavigationType.other {

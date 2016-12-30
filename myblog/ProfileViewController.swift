@@ -49,7 +49,6 @@ class ProfileViewController:UIViewController{
 extension ProfileViewController:HeaderViewDelegate,UIScrollViewDelegate{
     
 
-    
     func _setupTableView() {
         tableView = UITableView(frame:CGRect(x:0, y:0, width:mainScreenWidth, height:mainScreenHeight-49), style: UITableViewStyle.plain);
         tableView.backgroundColor = UIColor.white
@@ -87,9 +86,8 @@ extension ProfileViewController:HeaderViewDelegate,UIScrollViewDelegate{
     }
     
     
-    func headerViewheadbuttonClick() {
+    func headerViewheadbuttonClick() {            //用户未登录
         if(((userDefaults.object(forKey: "nickname") as? String)) == nil){
-            //用户未登录
             let login = LoginViewController()
             let nextNV = UINavigationController(rootViewController: login)
             self.present(nextNV, animated: true, completion: nil)
@@ -122,9 +120,7 @@ extension ProfileViewController:HeaderViewDelegate,UIScrollViewDelegate{
 
     }
 
-    
 
-    
     
     //获取登录用户个人信息
     func _loadUserData(){
@@ -180,6 +176,7 @@ extension ProfileViewController:UITableViewDataSource,UITableViewDelegate{
     func numberOfSections(in tableView: UITableView) -> Int {
         return self.titleArray.count
     }
+    
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 10
